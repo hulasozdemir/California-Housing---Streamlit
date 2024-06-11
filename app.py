@@ -1,14 +1,12 @@
 import streamlit as st
 import numpy as np
+import pandas as pd
 import pickle
-
-
 from sklearn.datasets import fetch_california_housing
-
-from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-
 from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 california_housing = fetch_california_housing()
@@ -52,3 +50,41 @@ input_data = scaler.transform(input_data)
 prediction = model.predict(input_data)
 
 st.write(f'Predicted Price: ${prediction[0]*1e5:,}')
+
+# Plotting
+st.header('Exploratory Data Analysis')
+
+# Histogram of target variable (house prices)
+st.subheader('Histogram of House Prices')
+fig, ax = plt.subplots()
+ax.hist(y, bins=30, edgecolor='k', alpha=0.7)
+ax.set_xlabel('Price ($100,000s)')
+ax.set_ylabel('Frequency')
+st.pyplot(fig)
+
+# Pair plot of some features against the target variable
+# st.subheader('Pair Plot')
+# data = pd.DataFrame(X, columns=columns)
+# data['Price'] = y
+# selected_features = st.multiselect('Select features for pair plot', columns, default=columns[:4])
+# if selected_features:
+#     pair_plot_data = data[selected_features + ['Price']]
+#     pair_plot = sns.pairplot(pair_plot_data)
+#     st.pyplot(pair_plot)
+
+# Feature Importance Plot (if using a model that supports feature importances)
+# Example with a RandomForestRegressor
+from sklearn.ensemble import RandomForestRegressor
+
+# Train a RandomForestRegressor
+rf_model = RandomForestRegressor()
+rf_model.fit(X_scaled, y)
+feature_importances = rf_model.feature_importances_
+
+# Plot feature importances
+st.subheader('Feature Importance')
+fig, ax = plt.subplots()
+ax.barh(columns, feature_importances, align='center')
+ax.set_xlabel('Feature Importance')
+ax.set_ylabel('Feature')
+st.pyplot(fig)

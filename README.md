@@ -50,6 +50,9 @@ The model is a linear regression model trained on the standardized features of t
 ### Deployment
 The Streamlit app provides an interactive web interface for the model. The app allows users to input house features through sliders and displays the predicted house price.
 
+### Live Demo
+Check out the live demo of the Streamlit app [here](https://california-housing---app-257sxrlhtxbavrrpgrcdzu.streamlit.app).
+
 ### File Descriptions
 - `app.py`: Contains the Streamlit app code, including data loading, feature scaling, and price prediction.
 - `model.pkl`: Pickle file containing the trained model and scaler.
