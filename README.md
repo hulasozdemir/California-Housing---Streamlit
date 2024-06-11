@@ -1,9 +1,3 @@
-### GitHub Repository Description
-
-Here's a description for your GitHub repository that outlines the project using the California Housing dataset for a machine learning model, deployed as a Streamlit app:
-
----
-
 ## California Housing Price Prediction
 
 ### Overview
@@ -62,14 +56,3 @@ The Streamlit app provides an interactive web interface for the model. The app a
 - `requirements.txt`: Contains the list of dependencies required to run the project.
 - `README.md`: Project description and setup instructions.
 
-### Future Work
-- **Enhance the model**: Experiment with different machine learning algorithms and feature engineering techniques to improve prediction accuracy.
-- **Add more features**: Incorporate additional relevant features into the dataset to enhance the model's predictive power.
-- **Deploy on cloud**: Deploy the Streamlit app on a cloud platform like Heroku or AWS for wider accessibility.
-
-### License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-This description provides a comprehensive overview of your project, detailing the structure, setup instructions, and future work. Feel free to customize it further based on your specific implementation and preferences.
